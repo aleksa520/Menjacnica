@@ -9,22 +9,38 @@ import menjacnicaIS.MenjacnicaInterfejs;
 public class Rad implements MenjacnicaInterfejs {
 
 	LinkedList<Kurs> valute = new LinkedList<Kurs>();
-	@Override
-	public void dodajKursValute(Kurs k) {
-		// TODO Auto-generated method stub
+
+	public void dodajKursValute(String ime, double prodajni, double srednji, double kupovni, 
+			GregorianCalendar datum) {
+		
+		Kurs k = new Kurs();
+		k.setNaziv(ime);
+		k.setProdajni(prodajni);
+		k.setSrednji(srednji);
+		k.setKupovni(kupovni);
+		
 		valute.add(k);
 	}
 
 	@Override
-	public void obrisiKursValute(String ime, GregorianCalendar datum) {
-		// TODO Auto-generated method stub
-
+	public void obrisiKursValute(Kurs k) {
+		
+		for(int i = 0; i < valute.size();i++) {
+			if(valute.get(i).equals(k))
+				valute.remove(valute.get(i));
+		}
 	}
 
 	@Override
 	public String vratiKurs(String ime, GregorianCalendar datum) {
-		// TODO Auto-generated method stub
-		return null;
+		Kurs k = new Kurs();
+		
+		k.setDatum(datum);
+		k.setNaziv(ime);
+		
+		if(valute.contains(k)) {
+			return k.toString();
+		}		
+		else return "Nema takvog kursa";
 	}
-
 }
