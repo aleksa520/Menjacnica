@@ -6,7 +6,8 @@ import menjacnica.Kurs;
 
 public interface MenjacnicaInterfejs {
 
-	public void dodajKursValute(Kurs k);
-	public void obrisiKursValute(String ime, GregorianCalendar datum);
+	public void dodajKursValute(String ime, double prodajni, double srednji, double kupovni, 
+			GregorianCalendar datum);
+	public void obrisiKursValute(Kurs k);
 	public String vratiKurs(String ime, GregorianCalendar datum);
 }
