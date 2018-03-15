@@ -8,7 +8,7 @@ import menjacnicaIS.MenjacnicaInterfejs;
 
 public class Rad implements MenjacnicaInterfejs {
 
-	LinkedList<Kurs> valute = new LinkedList<Kurs>();
+	LinkedList <Kurs> valute = new LinkedList<Kurs>();
 
 	public void dodajKursValute(String ime, double prodajni, double srednji, double kupovni, 
 			GregorianCalendar datum) {
