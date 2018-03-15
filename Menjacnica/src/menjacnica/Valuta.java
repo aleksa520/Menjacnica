@@ -9,13 +9,19 @@ public class Valuta{
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
-		this.naziv = naziv;
+		if(naziv != null)
+			this.naziv = naziv;
+		else
+			throw new RuntimeException("Greska");
 	}
 	public String getSkracenica() {
 		return skracenica;
 	}
 	public void setSkracenica(String skracenica) {
-		this.skracenica = skracenica;
+		if(skracenica!= null)
+			this.skracenica = skracenica;
+		else
+			throw new RuntimeException("Greska");
 	}
 	@Override
 	public String toString() {
